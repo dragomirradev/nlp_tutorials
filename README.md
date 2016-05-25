@@ -34,3 +34,5 @@ such as deep learning in NLP and word embedding.
 <http://rare-technologies.com/word2vec-tutorial>
 
 <http://google-opensource.blogspot.ca/2013/08/learning-meaning-behind-words.html>
+
+<https://github.com/piskvorky/gensim/blob/develop/gensim/models/word2vec.py>
