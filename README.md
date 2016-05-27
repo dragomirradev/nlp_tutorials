@@ -36,3 +36,9 @@ such as deep learning in NLP and word embedding.
 <http://google-opensource.blogspot.ca/2013/08/learning-meaning-behind-words.html>
 
 <https://github.com/piskvorky/gensim/blob/develop/gensim/models/word2vec.py>
+
+<http://arxiv.org/pdf/1506.03340v3.pdf>
+
+<https://github.com/codekansas/keras-language-modeling>
+
+<https://github.com/deepmind/rc-data>
