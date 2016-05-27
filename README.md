@@ -42,3 +42,14 @@ such as deep learning in NLP and word embedding.
 <https://github.com/codekansas/keras-language-modeling>
 
 <https://github.com/deepmind/rc-data>
+
+<http://multithreaded.stitchfix.com/blog/2015/03/11/word-is-worth-a-thousand-vectors/>
+
+<http://blog.echen.me/2011/08/22/introduction-to-latent-dirichlet-allocation/>
+
+<https://arxiv.org/abs/1605.02019>
+
+<https://github.com/cemoody/lda2vec>
+
+<http://lda2vec.readthedocs.io/en/latest/>
+
