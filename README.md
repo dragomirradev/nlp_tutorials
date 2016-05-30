@@ -60,3 +60,5 @@ such as deep learning in NLP and word embedding.
 <https://github.com/vinhkhuc/kaggle-sentiment-popcorn>
 
 <http://arxiv.org/abs/1412.5335>
+
+<http://stanfordnlp.github.io/CoreNLP/>
