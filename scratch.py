@@ -73,13 +73,7 @@ wn.synset('car.n.01').examples()
 
 stopwords.words('english')
 
-import urllib
-url = "http://www.gutenberg.org/files/2554/2554.txt"
-response = urllib.urlopen(url)
-raw = response.read().decode('utf8')
-type(raw)
 
-raw = PDT.ix[10, 'product_description']
 
 token = word_tokenize(raw)
 text = nltk.Text(token)
