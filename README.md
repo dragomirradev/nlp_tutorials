@@ -56,3 +56,7 @@ such as deep learning in NLP and word embedding.
 <https://ayearofai.com/lenny-2-autoencoders-and-word-embeddings-oh-my-576403b0113a>
 
 <https://docs.google.com/file/d/0B7XkCwpI5KDYRWRnd1RzWXQ2TWc/edit>
+
+<https://github.com/vinhkhuc/kaggle-sentiment-popcorn>
+
+<http://arxiv.org/abs/1412.5335>
