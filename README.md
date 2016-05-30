@@ -53,3 +53,4 @@ such as deep learning in NLP and word embedding.
 
 <http://lda2vec.readthedocs.io/en/latest/>
 
+<https://ayearofai.com/lenny-2-autoencoders-and-word-embeddings-oh-my-576403b0113a>
