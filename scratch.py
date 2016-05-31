@@ -87,7 +87,7 @@ raw = """'When I'M a Duchess,' she said to herself, (not in a very hopeful tone
 though), 'I won't have any pepper in my kitchen AT ALL. Soup does very
 well without--Maybe it's ! 12$ 82% always pepper $10.2 U.S.A. that makes people hot-tempered,'..."""
 
-re.split(r' ', raw)
+print(re.split(r' ', raw))
 
 re.split(r'[ \t\n]+', raw)
 
@@ -203,11 +203,12 @@ file='/Users/arman/word2vec-mac/trained_model.bin'
 file2='/Users/arman/word2vec-mac/vectors.bin'
 
 import numpy as np
+from pprint import pprint
 
 
 model = Word2Vec.load_word2vec_format(file2, binary=True)
 
-model.most_similar(positive=['woman', 'king'], negative=['man'])
+pprint(model.most_similar(positive=['woman', 'king'], negative=['man']))
 
 model.most_similar(positive=['italy', 'paris'], negative=['rome'])
 
