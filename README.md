@@ -85,3 +85,5 @@ such as deep learning in NLP and word embedding.
 
 <http://mattmahoney.net/dc/textdata.html>
 
+<http://cs224d.stanford.edu/syllabus.html>
+

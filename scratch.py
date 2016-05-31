@@ -198,36 +198,42 @@ with Timer("Training gensim model"):
 
 file='/Users/arman/word2vec-mac/trained_model.bin'
 
-model.save(file)
+#model.save(file)
 
 file2='/Users/arman/word2vec-mac/vectors.bin'
 
-file3 = '/Users/arman/word2vec-mac/GoogleNews-vectors-negative300.bin'
+import numpy as np
 
-model = Word2Vec.load_word2vec_format(file3, binary=True)
+
+model = Word2Vec.load_word2vec_format(file2, binary=True)
 
 model.most_similar(positive=['woman', 'king'], negative=['man'])
+
+model.most_similar(positive=['italy', 'paris'], negative=['rome'])
+
+model.most_similar(positive=['grandfather','mother'],negative=['father'])
 
 model.most_similar(positive=['night', 'sun'], negative=['day'])
 
 model.most_similar(positive=['air', 'car'], negative=['street'])
 
-model.most_similar(positive=['Japan', 'Paris'], negative=['Tokio'])
+model.most_similar(positive=['small','cold'],negative=['large'])
 
-model.most_similar(positive=['hello'])
+model.most_similar(positive=['art','experiment'],negative=['science'])
 
+model.most_similar(positive=['men','car'],negative=['man'])
 
+model.most_similar(positive=['great','mathematics'],negative=['good'])
 
-E("biggest") - E("big") + E("small")  ~= E("smallest")
-E("Italy") - E("Rome") + E("Paris")  ~= E("France")
-E("scientist") - E("Einstein") + E("Picasso") ~= E("painter")
+model.most_similar(positive=['blue','friends'],negative=['colors'])
 
+####
 
+model.doesnt_match(['breakfast', 'cereal', 'dinner', 'lunch'])
 
-model.most_similar(positive=['uncle', 'man'], negative=['woman'])
+model.doesnt_match('car truck house bicycle'.split())
 
-model.doesnt_match("breakfast cereal dinner lunch".split())
-
+model.doesnt_match('soda juice coke beer hamburger'.split())
 
 
 newdoc = [ \
