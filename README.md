@@ -83,3 +83,5 @@ such as deep learning in NLP and word embedding.
 
 <http://nbviewer.jupyter.org/github/danielfrg/word2vec/blob/master/examples/word2vec.ipynb>
 
+<http://mattmahoney.net/dc/textdata.html>
+

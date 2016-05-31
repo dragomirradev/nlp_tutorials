@@ -6,6 +6,7 @@ from nltk import word_tokenize
 from nltk.stem import WordNetLemmatizer 
 from sklearn.feature_extraction.text import CountVectorizer
 from nltk.corpus import stopwords
+from utils import Timer
 
 from nltk.book import *
 
@@ -189,10 +190,13 @@ print(text8[0:1000])
 
 from gensim.models import Word2Vec
 
-model = Word2Vec(text8,size=200,window=5, workers=4)
+with Timer("Training gensim model"):
+    model = Word2Vec(text8,size=300, window=5, workers=4)
+
+#[Training gensim model] Elapsed: 0hour:19min:59sec
+
 
 file='/Users/arman/word2vec-mac/trained_model.bin'
-
 
 model.save(file)
 
@@ -201,6 +205,20 @@ file2='/Users/arman/word2vec-mac/vectors.bin'
 model = Word2Vec.load_word2vec_format(file2, binary=True)
 
 model.most_similar(positive=['woman', 'king'], negative=['man'])
+
+model.most_similar(positive=['night', 'sun'], negative=['day'])
+
+model.most_similar(positive=['air', 'car'], negative=['street'])
+
+model.most_similar(positive=['Germany', 'Paris'], negative=['Berlin'])
+
+
+
+E("biggest") - E("big") + E("small")  ~= E("smallest")
+E("Italy") - E("Rome") + E("Paris")  ~= E("France")
+E("scientist") - E("Einstein") + E("Picasso") ~= E("painter")
+
+
 
 model.most_similar(positive=['uncle', 'man'], negative=['woman'])
 
