@@ -202,7 +202,9 @@ model.save(file)
 
 file2='/Users/arman/word2vec-mac/vectors.bin'
 
-model = Word2Vec.load_word2vec_format(file2, binary=True)
+file3 = '/Users/arman/word2vec-mac/GoogleNews-vectors-negative300.bin'
+
+model = Word2Vec.load_word2vec_format(file3, binary=True)
 
 model.most_similar(positive=['woman', 'king'], negative=['man'])
 
@@ -210,7 +212,9 @@ model.most_similar(positive=['night', 'sun'], negative=['day'])
 
 model.most_similar(positive=['air', 'car'], negative=['street'])
 
-model.most_similar(positive=['Germany', 'Paris'], negative=['Berlin'])
+model.most_similar(positive=['Japan', 'Paris'], negative=['Tokio'])
+
+model.most_similar(positive=['hello'])
 
 
 
