@@ -87,3 +87,5 @@ such as deep learning in NLP and word embedding.
 
 <http://cs224d.stanford.edu/syllabus.html>
 
+<http://www-personal.umich.edu/~ronxin/pdf/w2vexp.pdf>
+
