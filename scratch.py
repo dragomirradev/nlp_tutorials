@@ -180,6 +180,31 @@ print(data[10])
 
 print(set(target))
 
+file='/Users/arman/word2vec-mac/text8'
+
+with open(file,'r') as f:
+    text8 = f.read()
+    
+print(text8[0:1000])
+
+from gensim.models import Word2Vec
+
+model = Word2Vec(text8,size=200,window=5, workers=4)
+
+file='/Users/arman/word2vec-mac/trained_model.bin'
+
+
+model.save(file)
+
+file2='/Users/arman/word2vec-mac/vectors.bin'
+
+model = Word2Vec.load_word2vec_format(file2, binary=True)
+
+model.most_similar(positive=['woman', 'king'], negative=['man'])
+
+model.most_similar(positive=['uncle', 'man'], negative=['woman'])
+
+model.doesnt_match("breakfast cereal dinner lunch".split())
 
 
 

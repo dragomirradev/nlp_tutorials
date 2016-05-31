@@ -73,3 +73,13 @@ such as deep learning in NLP and word embedding.
 
 <https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2>
 
+<http://nlp.stanford.edu/pubs/glove.pdf>
+
+<http://nlp.stanford.edu/projects/glove/>
+
+<https://github.com/stanfordnlp/GloVe>
+
+<http://www.cs.princeton.edu/~blei/papers/HoffmanBleiBach2010b.pdf>
+
+<http://nbviewer.jupyter.org/github/danielfrg/word2vec/blob/master/examples/word2vec.ipynb>
+
