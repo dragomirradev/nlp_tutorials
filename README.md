@@ -62,3 +62,14 @@ such as deep learning in NLP and word embedding.
 <http://arxiv.org/abs/1412.5335>
 
 <http://stanfordnlp.github.io/CoreNLP/>
+
+<https://github.com/jeffreybreen/twitter-sentiment-analysis-tutorial-201107>
+
+<http://www.idiap.ch/~apbelis/hlt-course/negative-words.txt>
+
+<http://www.idiap.ch/~apbelis/hlt-course/positive-words.txt>
+
+<https://dumps.wikimedia.org/enwiki/>
+
+<https://dumps.wikimedia.org/enwiki/latest/enwiki-latest-pages-articles.xml.bz2>
+

@@ -108,6 +108,8 @@ tokenizer.tokenize(raw)
 pattern = r"(?u)\b\w\w+\b"
 tokenizer = RegexpTokenizer(pattern)
 
+tokenizer.tokenize(raw)
+
 import timeit
 %timeit tokens1 = tokenizer.tokenize(raw.lower())
 
@@ -118,10 +120,7 @@ pattern = re.compile(pattern, flags = re.UNICODE | re.LOCALE)
 
 
 tokenizer = RegexpTokenizer(pattern)
-tokenizer.tokenize(raw)
-
-for i in xrange(0,10):
-    print(i)
+%timeit tokenizer.tokenize(raw)
 
 
 
@@ -149,6 +148,39 @@ from sklearn.feature_extraction.text import TfidfVectorizer
 vectorizer = TfidfVectorizer(min_df=1)
 
 vectorizer.fit(corpus)
+
+# http://radimrehurek.com/gensim/tut1.html
+documents = ["Human machine interface for lab abc computer applications",\
+             "A survey of user opinion of computer system response time",\
+             "The EPS user interface management system",\
+             "System and human system engineering testing of EPS",\
+             "Relation of user perceived response time to error measurement",\
+             "The generation of random binary unordered trees",\
+             "The intersection graph of paths in trees",\
+             "Graph minors IV Widths of trees and well quasi ordering",\
+             "Graph minors A survey"]
+             
+from sklearn.datasets import fetch_20newsgroups
+newsgroups_train = fetch_20newsgroups(subset='train')
+
+print(newsgroups_train.target_names)
+
+filenames = newsgroups_train.filenames
+target = newsgroups_train.target
+data = newsgroups_train.data
+
+import requests
+url = "http://mattmahoney.net/dc/text8.zip"
+r = requests.get(url)
+print(len(r.content))
+
+
+print(len(data))
+print(data[10])
+
+print(set(target))
+
+
 
 
 newdoc = [ \
