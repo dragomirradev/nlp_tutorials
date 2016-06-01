@@ -89,3 +89,5 @@ such as deep learning in NLP and word embedding.
 
 <http://www-personal.umich.edu/~ronxin/pdf/w2vexp.pdf>
 
+<https://class.coursera.org/nlp/lecture/preview>
+
