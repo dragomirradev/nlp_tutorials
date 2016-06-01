@@ -91,3 +91,5 @@ such as deep learning in NLP and word embedding.
 
 <https://class.coursera.org/nlp/lecture/preview>
 
+<https://www.tensorflow.org/versions/r0.8/tutorials/word2vec/index.html>
+
