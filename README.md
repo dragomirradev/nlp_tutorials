@@ -77,14 +77,19 @@ There are several issues with this approach when we consider the entire English 
 
 Term Frequency Inverse Document Frequency (TF-IDF) is a very good solution for the problems above.
 
-### IDF: (Inverse document frequency)
+#### IDF: (Inverse document frequency)
 Penalize the total count of a word in a document by the number of its appearance in all of the documents. The higher this number
 the less valuable the word is (aka common words)!
 
 A good heurestic is **``log(1+M)``** where **``M``** is the number of the documents
 the word appears.
 
-## TF: Term frequency
+#### TF: Term frequency
+Another problem is that in a document how many times shall we count a word? Two extremes are to count them as many time as they appear,
+or just count them once and ignore the other appearance of the word. As you can guess something in between is a good solution! 
+The nonlinear transformation of this count is called ``TF`` function, there are many heurestics for it, the state of the art is **``BM25``**.
+
+
 
 
 
