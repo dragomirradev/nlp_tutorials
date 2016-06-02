@@ -87,7 +87,8 @@ the word appears.
 #### TF: Term frequency
 Another problem is that in a document how many times shall we count a word? Two extremes are to count them as many time as they appear,
 or just count them once and ignore the other appearance of the word. As you can guess something in between is a good solution! 
-The nonlinear transformation of this count is called ``TF`` function, there are many heurestics for it, the state of the art is **``BM25``**.
+The nonlinear transformation of this count is called **``TF``** function, there are many heurestics for it, the state of the art is **``BM25``**.
+![alttag](img/TF.png)
 
 
 

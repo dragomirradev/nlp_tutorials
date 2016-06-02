@@ -13,6 +13,9 @@ vectorizer.fit(corpus)
 
 corpus_vec = vectorizer.transform(corpus).toarray()
 
+print(corpus_vec)
+
+
 
 
 
