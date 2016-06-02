@@ -456,6 +456,25 @@ def getTriterm(words, join_string):
 
 ## Let's Dig "Deep"er! aka. Google's word2vec 
 
+So far we assumed that words are atomic type, i.e. has no meaning! While that's not the case! How can we 
+create a vector space that vectors actually represent meaning? 
+
+
+
+### Continuous bag of words model (CBOW)
+
+Introduced in [[+]](http://arxiv.org/pdf/1301.3781.pdf), the model is based on the fact that using
+the words context (surrounding words) one should be able to predict the word.
+
+![alttag](img/CBOW.png)
+
+### Skip-gram model 
+
+Described in [[+]](http://papers.nips.cc/paper/5021-distributed-representations-of-words-and-phrases-and-their-compositionality.pdf)
+the model assumes that using the word one should be able to predict the surrounding words.
+
+![alttag](img/SKIP.png)
+
 
 ## Links
 
