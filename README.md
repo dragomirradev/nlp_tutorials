@@ -8,7 +8,7 @@ such as deep learning in NLP and word embedding.
 
 A very simple approach is to use each word as an *atomic* type and as a a basis for a vector space:
 
-[!alttag](img/vsm.png)
+(!alttag)[img/vsm.png]
 
 ## Links
 
