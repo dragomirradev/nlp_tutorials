@@ -75,9 +75,12 @@ There are several issues with this approach when we consider the entire English 
 
 ### Solution: TF-IDF
 
-Term Frequency Inverse Document Frequency is a very good solution for the problems above:
+Term Frequency Inverse Document Frequency (TF-IDF) is a very good solution for the problems above.
 
-Intuitively the words that appear 
+### IDF:
+Penalize the total count of a word in a document by the number of its appearance in all of the documents. The higher this number
+the less valuable the word is! (aka common words) A good heurestic is **``log(1+M)``** where **``M``** is the number of the documents
+the word appears.
 
 
 ## Links
