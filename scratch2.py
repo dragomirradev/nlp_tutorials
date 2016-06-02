@@ -101,3 +101,5 @@ print("Example:", wn.synset('car.n.01').examples())
 
 
 
+
+
