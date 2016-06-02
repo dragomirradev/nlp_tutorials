@@ -191,7 +191,7 @@ Stemmed with lemmatize: ['apply', 'cars', 'write', 'do', 'paint']
 
 There are several ways to split sentences and document to words, one is simply to use the white space character!
 
-1. **White space**: (easiest and fastest approach) 
+* **White space**: (easiest and fastest approach) 
 ```python
 print('This is a sentence.'.split())
 ```
@@ -202,7 +202,7 @@ Output:
 
 (You can already see the problem with the '.' at the end of "sentece.".
 
-2. **using regexp**: (better for complicated combination of characters)
+* **using regexp**: (better for complicated combination of characters)
 
 
 
