@@ -302,6 +302,34 @@ Output:
 , 'mustn', 'needn', 'shan', 'shouldn', 'wasn', 'weren', 'won', 'wouldn']
 ```
 
+#### And of course making everythin lower case!
+
+
+#### Having a dictionary in python can come handy!
+wordnet can be used as a dictionary, particulary to extract synonums of the words:
+```python
+from nltk.corpus import wordnet as wn
+
+print("Category name:", wn.synsets('motorcar'))
+
+print("Synonyms:", wn.synset('car.n.01').lemma_names())
+
+print("Definition:", wn.synset('car.n.01').definition())
+
+print("Example:", wn.synset('car.n.01').examples())
+```
+
+Output:
+```
+Category name: [Synset('car.n.01')]
+
+Synonyms: ['car', 'auto', 'automobile', 'machine', 'motorcar']
+
+Definition: a motor vehicle with four wheels; usually propelled by an internal combustion engine
+
+Example: ['he needs a car to get to work']
+```
+
 
 
 ## Links

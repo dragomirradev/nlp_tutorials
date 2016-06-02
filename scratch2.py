@@ -82,6 +82,15 @@ from nltk.corpus import stopwords
 
 print(stopwords.words('english'))
 
+from nltk.corpus import wordnet as wn
+
+print("Category name:", wn.synsets('motorcar'))
+
+print("Synonyms:", wn.synset('car.n.01').lemma_names())
+
+print("Definition:", wn.synset('car.n.01').definition())
+
+print("Example:", wn.synset('car.n.01').examples())
 
 
 
