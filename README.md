@@ -482,6 +482,17 @@ the model assumes that using the word one should be able to predict the surround
 
 ![alttag](img/SKIP.png)
 
+#### What to expect if the vectors have real meaning?
+
+It should capture semantic relations:
+
+![alttag](img/w2vtranslation.png)
+
+Another cool representation from google's blog:
+
+![alttag](img/country-capital.gif)
+
+
 
 ## Links
 
