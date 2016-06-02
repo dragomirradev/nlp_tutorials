@@ -1,4 +1,3 @@
-
 corpus = ["Apple Orange Orange Apple",\
           "Apple Banana Apple Banana",\
           "Banana Apple Banana Banana Banana Apple",\
@@ -61,6 +60,7 @@ print("Stemmed with snowball:",stemmed)
 stemmed = [stemmer3.stem(w,'v') for w in some_words]
 print("Stemmed with lemmatize:",stemmed)
 
+print('This is a sentence.'.split())
 
 
 
