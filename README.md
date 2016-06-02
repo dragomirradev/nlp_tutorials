@@ -19,6 +19,21 @@ Banana ==>> [0,1,0]
 Orange ==>> [0,0,1]
 ```
 
+Then a *"sentence"* or a *"document"* becomes the linear combination of these vectors where the number of
+the counts of appearance of the words is the coefficient along that dimenstion.
+For example in the image above:
+
+```
+d3 = "Apple Orange Orange Apple" ==>> [2,0,2]
+d4 = "Apple Banana Apple Banana" ==>> [2,2,0]
+d1 = "Banana Apple Banana Banana Banana Apple" ==>> [2,4,0]
+d2 = "Banana Orange Banana Banana Orange Banana" ==>> [0,4,2]
+d5 = "Banana Apple Banana Banana Orange Banana" ==>> [1,4,1]
+```
+
+Now the similarity of the documents, or a query to a document can be measured by the similarity of these
+vectors (for example cosine similarity).
+
 ## Links
 
 <http://www.nltk.org/book/>
