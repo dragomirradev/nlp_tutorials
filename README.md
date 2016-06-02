@@ -157,6 +157,35 @@ class Stemmer(object):
 ```
 
 Now we can define 3 different stemmer objects:
+```python
+stemmer1 = Stemmer('porter').stemmer
+stemmer2 = Stemmer('snowball').stemmer
+stemmer3 = Stemmer('lemmatize').stemmer
+```
+
+And their performance is shown below: (Note that lemmatize needs the type of word 'v' to perform well, and is much slower than the others)
+
+```python
+some_words=['applied', 'cars', 'written', 'done', 'painting']
+print("Original:", some_words)
+
+stemmed = [stemmer1.stem(w) for w in some_words]
+print("Stemmed with porter:", stemmed)
+
+stemmed = [stemmer2.stem(w) for w in some_words]
+print("Stemmed with snowball:",stemmed)
+
+stemmed = [stemmer3.stem(w,'v') for w in some_words]
+print("Stemmed with lemmatize:",stemmed)
+```
+
+Output:
+```
+Original: ['applied', 'cars', 'written', 'done', 'painting']
+Stemmed with porter: ['appli', 'car', 'written', 'done', 'paint']
+Stemmed with snowball: ['appli', 'car', 'written', 'done', 'paint']
+Stemmed with lemmatize: ['apply', 'cars', 'write', 'do', 'paint']
+```
 
 
 ## Links

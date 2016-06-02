@@ -44,8 +44,22 @@ class Stemmer(object):
         else:
             raise NameError("'"+stemmer_type +"'" + " not supported")
 
+stemmer1 = Stemmer('porter').stemmer
+stemmer2 = Stemmer('snowball').stemmer
+stemmer3 = Stemmer('lemmatize').stemmer
 
 
+some_words=['applied', 'cars', 'written', 'done', 'painting']
+print("Original:", some_words)
+
+stemmed = [stemmer1.stem(w) for w in some_words]
+print("Stemmed with porter:", stemmed)
+
+stemmed = [stemmer2.stem(w) for w in some_words]
+print("Stemmed with snowball:",stemmed)
+
+stemmed = [stemmer3.stem(w,'v') for w in some_words]
+print("Stemmed with lemmatize:",stemmed)
 
 
 
