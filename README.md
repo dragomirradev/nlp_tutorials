@@ -6,6 +6,10 @@ such as deep learning in NLP and word embedding.
 
 ## Vector space representation of documents
 
+A very simple approach is to use each word as an *atomic* type and as a a basis for a vector space:
+
+[!alttag](img/vsm.png)
+
 ## Links
 
 <http://www.nltk.org/book/>
