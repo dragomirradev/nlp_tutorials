@@ -459,7 +459,13 @@ def getTriterm(words, join_string):
 So far we assumed that words are atomic type, i.e. has no meaning! While that's not the case! How can we 
 create a vector space that vectors actually represent meaning? 
 
+Another problem with VSM is that it has too many features! (Typical corpus of english words will have 50K unique words!)
 
+### SVD based model
+The idea is to conside the word-document matrix or co-occourance matrix and perform an
+SVD and use the enough number of principle components that describes the matrix. Then
+the components are the lower dimenstional representation of the words. These models existed,
+but were too slow. Google's word2vec uses an iterative approach.
 
 ### Continuous bag of words model (CBOW)
 
@@ -467,6 +473,7 @@ Introduced in [[+]](http://arxiv.org/pdf/1301.3781.pdf), the model is based on t
 the words context (surrounding words) one should be able to predict the word.
 
 ![alttag](img/CBOW.png)
+
 
 ### Skip-gram model 
 
