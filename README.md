@@ -64,7 +64,20 @@ And we get:
  [1 4 1]]
 ```
 
+**Notice that in this model documents/sentences lose their order and syntactic structure!**
 
+### The problems with this VSM
+
+There are several issues with this approach when we consider the entire English dictionary, Let's consider the following two:
+
+1. There are words that are just common, so they appear in lots of documents.
+2. In a given document we shouldn't value repeating words too much.
+
+### Solution: TF-IDF
+
+Term Frequency Inverse Document Frequency is a very good solution for the problems above:
+
+Intuitively the words that appear 
 
 
 ## Links
