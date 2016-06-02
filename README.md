@@ -492,6 +492,28 @@ Another cool representation from google's blog:
 
 ![alttag](img/country-capital.gif)
 
+```python
+from gensim.models import Word2Vec
+
+bin_file='/Users/arman/word2vec-mac/vectors.bin'
+
+model = Word2Vec.load_word2vec_format(bin_file, binary=True)
+```
+
+Now try the followings:
+
+```python
+model.most_similar(positive=['italy', 'paris'], negative=['rome']);
+model.most_similar(positive=['grandfather','mother'],negative=['father']);
+model.most_similar(positive=['night', 'sun'], negative=['day']);
+model.most_similar(positive=['air', 'car'], negative=['street']);
+model.most_similar(positive=['small','cold'],negative=['large']);
+model.most_similar(positive=['art','experiment'],negative=['science']);
+model.most_similar(positive=['men','car'],negative=['man']);
+```
+
+
+
 
 
 ## Links

@@ -93,9 +93,39 @@ print("Definition:", wn.synset('car.n.01').definition())
 print("Example:", wn.synset('car.n.01').examples())
 
 
+from gensim.models import Word2Vec
+from pprint import pprint
 
+bin_file='/Users/arman/word2vec-mac/vectors.bin'
 
+model = Word2Vec.load_word2vec_format(bin_file, binary=True)
 
+x = model.most_similar(positive=['italy', 'paris'], negative=['rome'])
+pprint(x)
+
+x = model.most_similar(positive=['grandfather','mother'],negative=['father'])
+
+pprint(x)
+
+x = model.most_similar(positive=['night', 'sun'], negative=['day'])
+
+pprint(x)
+
+x = model.most_similar(positive=['air', 'car'], negative=['street'])
+
+pprint(x)
+
+model.most_similar(positive=['small','cold'],negative=['large'])
+
+model.most_similar(positive=['art','experiment'],negative=['science'])
+
+model.most_similar(positive=['mathematics','einstein'],negative=['physics'])
+
+model.most_similar(positive=['men','car'],negative=['man'])
+
+model.most_similar(positive=['great','mathematics'],negative=['good'])
+
+model.most_similar(positive=['blue','friends'],negative=['colors'])
 
 
 
