@@ -10,6 +10,15 @@ A very simple approach is to use each word as an *atomic* type and as a a basis 
 
 ![alttag](img/vsm.png)
 
+For example imagine a world where there exist only 3 words: "Apple", "Orange", and "Banana" and every
+sentence or document is made of them. They become the basis of a 3 dimenstional vector space:
+
+```
+Apple  ==>> [1,0,0]
+Banana ==>> [0,1,0]
+Orange ==>> [0,0,1]
+```
+
 ## Links
 
 <http://www.nltk.org/book/>
