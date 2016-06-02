@@ -34,6 +34,26 @@ d5 = "Banana Apple Banana Banana Orange Banana" ==>> [1,4,1]
 Now the similarity of the documents, or a query to a document can be measured by the similarity of these
 vectors (for example cosine similarity).
 
+This vectorization is implemented in [scikit-learn's CountVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.CountVectorizer.html)
+
+```python
+corpus = ["Apple Orange Orange Apple",\
+          "Apple Banana Apple Banana",\
+          "Banana Apple Banana Banana Banana Apple",\
+          "Banana Orange Banana Banana Orange Banana",\
+          "Banana Apple Banana Banana Orange Banana"]
+          
+from sklearn.feature_extraction.text import CountVectorizer
+
+vectorizer = CountVectorizer()
+
+vectorizer.fit(corpus)
+
+corpus_vec = vectorizer.transform(corpus).toarray()
+
+print(corpus_vec)
+```
+
 ## Links
 
 <http://www.nltk.org/book/>
