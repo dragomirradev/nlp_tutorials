@@ -11,7 +11,7 @@ A very simple approach is to use each word as an *atomic* type and as a a basis 
 ![alttag](img/vsm.png)
 
 For example imagine a world where there exist only 3 words: "Apple", "Orange", and "Banana" and every
-sentence or document is made of them. They become the basis of a 3 dimensional vector space:
+sentence or document is made of them. They become the basis of a 3 dimenstional vector space:
 
 ```
 Apple  ==>> [1,0,0]
@@ -20,7 +20,7 @@ Orange ==>> [0,0,1]
 ```
 
 Then a *"sentence"* or a *"document"* becomes the linear combination of these vectors where the number of
-the counts of appearance of the words is the coefficient along that dimension.
+the counts of appearance of the words is the coefficient along that dimenstion.
 For example in the image above:
 
 ```
@@ -81,7 +81,7 @@ Term Frequency Inverse Document Frequency (TF-IDF) is a very good solution for t
 Penalize the total count of a word in a document by the number of its appearance in all of the documents. The higher this number
 the less valuable the word is (aka common words)!
 
-A good heuristic is **``log((1+M)/k)``** where **``M``** is the number of the documents and **``k``** is the number 
+A good heurestic is **``log((1+M)/k)``** where **``M``** is the number of the documents and **``k``** is the number 
 of the documents that the word appears in.
 
 ![alttag](img/IDF.png)
@@ -89,7 +89,7 @@ of the documents that the word appears in.
 #### TF: Term frequency
 Another problem is that in a document how many times shall we count a word? Two extremes are to count them as many time as they appear,
 or just count them once and ignore the other appearance of the word. As you can guess something in between is a good solution! 
-The nonlinear transformation of this count is called **``TF``** function, there are many heuristics for it, the state of the art is **``BM25``**.
+The nonlinear transformation of this count is called **``TF``** function, there are many heurestics for it, the state of the art is **``BM25``**.
 ![alttag](img/TF.png)
 
 #### TF-IDF Example:
@@ -119,7 +119,7 @@ and we get:
 
 
 *Note:* that both count vectorizer and tf-idf vectorizer are very smart with their memory management, and save the returned matrix in scipy sparse matrix.
-When ``.toarray()`` is performed they return the actual matrix which can be too large to keep in memory!
+When ``.toarray()`` is performed they return the actuall matrix which can be too large to keep in memory!
 
 ### How to prepare the text?
 
@@ -200,11 +200,11 @@ Output:
 ['This', 'is', 'a', 'sentence.']
 ```
 
-(You can already see the problem with the '.' at the end of "sentence.".
+(You can already see the problem with the '.' at the end of "sentece.".
 
 * **using regexp**: (better for complicated combination of characters)
 
-For example consider the following text:
+For examle consider the following text:
 
 ```python
 raw = """'When I'M a Duchess,' she said to herself, (not in a very hopeful tone
@@ -302,11 +302,11 @@ Output:
 , 'mustn', 'needn', 'shan', 'shouldn', 'wasn', 'weren', 'won', 'wouldn']
 ```
 
-#### And of course making everything lower case!
+#### And of course making everythin lower case!
 
 
 #### Having a dictionary in python can come handy!
-wordnet can be used as a dictionary, particularly to extract synonyms of the words:
+wordnet can be used as a dictionary, particulary to extract synonums of the words:
 ```python
 from nltk.corpus import wordnet as wn
 
@@ -462,9 +462,9 @@ create a vector space that vectors actually represent meaning?
 Another problem with VSM is that it has too many features! (Typical corpus of english words will have 50K unique words!)
 
 ### SVD based model
-The idea is to consider the word-document matrix or co-occurrence matrix and perform an
+The idea is to conside the word-document matrix or co-occourance matrix and perform an
 SVD and use the enough number of principle components that describes the matrix. Then
-the components are the lower dimensional representation of the words. These models existed,
+the components are the lower dimenstional representation of the words. These models existed,
 but were too slow. Google's word2vec uses an iterative approach.
 
 ### Continuous bag of words model (CBOW)
@@ -488,7 +488,7 @@ It should capture semantic relations:
 
 ![alttag](img/w2vtranslation.png)
 
-Another cool representation from Google's blog:
+Another cool representation from google's blog:
 
 ![alttag](img/country-capital.gif)
 
