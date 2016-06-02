@@ -118,7 +118,45 @@ and we get:
 ```
 
 
+*Note:* that both count vectorizer and tf-idf vectorizer are very smart with their memory management, and save the returned matrix in scipy sparse matrix.
+When ``.toarray()`` is performed they return the actuall matrix which can be too large to keep in memory!
 
+### How to prepare the text?
+
+There are still several issues that we ignored in the examples above including:
+
+1. Words can have different versions: "car", "cars", "apply", "applied" etc...
+2. How to split the sentence to a list of words?
+3. What about the words that are incredibly common in English and has no meaning? For example "the" "that" etc...
+
+#### Stemming
+
+Stemming is the process of finding the root of the word, ``nltk`` provides 3 different version of stemmers: 
+``porter``, ``snowball`` and ``wordnetlemmatizer``
+
+Let's first wrap them all into a single class:
+```python
+import nltk.stem
+from nltk.stem import WordNetLemmatizer
+
+class WordNetStemmer(WordNetLemmatizer):
+    def stem(self,word,pos=u'n'):
+        return self.lemmatize(word,pos)
+
+class Stemmer(object):
+    def __init__(self,stemmer_type):
+        self.stemmer_type = stemmer_type
+        if (self.stemmer_type == 'porter'):
+            self.stemmer = nltk.stem.PorterStemmer()
+        elif (self.stemmer_type == 'snowball'):
+            self.stemmer = nltk.stem.SnowballStemmer('english')
+        elif (self.stemmer_type == 'lemmatize'):
+            self.stemmer = WordNetStemmer()
+        else:
+            raise NameError("'"+stemmer_type +"'" + " not supported")
+```
+
+Now we can define 3 different stemmer objects:
 
 
 ## Links
