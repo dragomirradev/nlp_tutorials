@@ -500,7 +500,7 @@ bin_file='/Users/arman/word2vec-mac/vectors.bin'
 model = Word2Vec.load_word2vec_format(bin_file, binary=True)
 ```
 
-Now try the followings:
+Now remove the ';' from the following and see what you get!
 
 ```python
 model.most_similar(positive=['italy', 'paris'], negative=['rome']);
