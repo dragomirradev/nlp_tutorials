@@ -78,7 +78,9 @@ print(re.findall(r"\b\w\w+\b",raw))
 print(re.findall(r"(?:[A-Z]\.)+|\w+(?:[']\w+)*|\$?\d+(?:\.\d+)?%?", raw))
 
 
+from nltk.corpus import stopwords
 
+print(stopwords.words('english'))
 
 
 
