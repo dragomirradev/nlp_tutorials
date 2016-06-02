@@ -15,10 +15,15 @@ corpus_vec = vectorizer.transform(corpus).toarray()
 
 print(corpus_vec)
 
+from sklearn.feature_extraction.text import TfidfVectorizer
 
+vectorizer = TfidfVectorizer()
 
+vectorizer.fit(corpus)
 
+corpus_vec = vectorizer.transform(corpus).toarray()
 
+print(corpus_vec)
 
 
 

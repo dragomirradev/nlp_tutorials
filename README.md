@@ -90,6 +90,31 @@ or just count them once and ignore the other appearance of the word. As you can 
 The nonlinear transformation of this count is called **``TF``** function, there are many heurestics for it, the state of the art is **``BM25``**.
 ![alttag](img/TF.png)
 
+#### TF-IDF Example:
+This algorithm is implemented in [scikit-learn's TfidfVectorizer](http://scikit-learn.org/stable/modules/generated/sklearn.feature_extraction.text.TfidfVectorizer.html):
+
+```python
+from sklearn.feature_extraction.text import TfidfVectorizer
+
+vectorizer = TfidfVectorizer()
+
+vectorizer.fit(corpus)
+
+corpus_vec = vectorizer.transform(corpus).toarray()
+
+print(corpus_vec)
+```
+
+and we get:
+
+```
+[[ 0.64374446  0.          0.76524053]
+ [ 0.70710678  0.70710678  0.        ]
+ [ 0.4472136   0.89442719  0.        ]
+ [ 0.          0.85962194  0.51093065]
+ [ 0.23304334  0.93217336  0.2770264 ]]
+```
+
 
 
 
