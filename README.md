@@ -204,6 +204,63 @@ Output:
 
 * **using regexp**: (better for complicated combination of characters)
 
+For examle consider the following text:
+
+```python
+raw = """'When I'M a Duchess,' she said to herself, (not in a very hopeful tone
+though), 'I won't have any pepper in my kitchen AT ALL. Soup does very
+well without--Maybe it's ! 12$ 82% always pepper $10.2 U.S.A. that makes 
+people hot-tempered,'..."""
+```
+
+There are several issues for example what to do with "hot-tempered" or "82%" or "U.S.A".
+
+Let's try the white space using python's regexp package: ``re``
+```python
+import re
+
+print(re.split(r' ', raw))
+```
+
+Output:
+```
+["'When", "I'M", 'a', "Duchess,'", 'she', 'said', 'to', 'herself,', '(not', 'in', 'a', 'very', 'hopeful', 'tone\nthough),', "'I", "won't", 'have', 'any', 'pepper', 'in', 'my', 'kitchen', 'AT', 'ALL.', 'Soup', 'does', 'very\nwell', 'without--Maybe', "it's", '!', '12$', '82%', 'always', 'pepper', '$10.2', 'U.S.A.', 'that', 'makes', '\npeople', "hot-tempered,'..."]
+```
+
+We can split by word boundaries:
+
+```python
+print(re.split(r'\W+', raw))
+```
+
+Output:
+```
+['', 'When', 'I', 'M', 'a', 'Duchess', 'she', 'said', 'to', 'herself', 'not', 'in', 'a', 'very', 'hopeful', 'tone', 'though', 'I', 'won', 't', 'have', 'any', 'pepper', 'in', 'my', 'kitchen', 'AT', 'ALL', 'Soup', 'does', 'very', 'well', 'without', 'Maybe', 'it', 's', '12', '82', 'always', 'pepper', '10', '2', 'U', 'S', 'A', 'that', 'makes', 'people', 'hot', 'tempered', '']
+```
+
+Let's try sklearn's default tokenizer pattern:
+```python
+print(re.findall(r"\b\w\w+\b",raw))
+```
+
+Output:
+```
+['When', 'Duchess', 'she', 'said', 'to', 'herself', 'not', 'in', 'very', 'hopeful', 'tone', 'though', 'won', 'have', 'any', 'pepper', 'in', 'my', 'kitchen', 'AT', 'ALL', 'Soup', 'does', 'very', 'well', 'without', 'Maybe', 'it', '12', '82', 'always', 'pepper', '10', 'that', 'makes', 'people', 'hot', 'tempered']
+```
+
+Or we can go crazy:
+
+```python
+print(re.findall(r"(?:[A-Z]\.)+|\w+(?:[']\w+)*|\$?\d+(?:\.\d+)?%?", raw))
+```
+
+Output:
+```
+['When', "I'M", 'a', 'Duchess', 'she', 'said', 'to', 'herself', 'not', 'in', 'a', 'very', 'hopeful', 'tone', 'though', 'I', "won't", 'have', 'any', 'pepper', 'in', 'my', 'kitchen', 'AT', 'ALL', 'Soup', 'does', 'very', 'well', 'without', 'Maybe', "it's", '12', '82', 'always', 'pepper', '$10.2', 'U.S.A.', 'that', 'makes', 'people', 'hot', 'tempered']
+```
+
+
+
 
 
 ## Links

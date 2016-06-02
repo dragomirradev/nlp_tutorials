@@ -62,6 +62,22 @@ print("Stemmed with lemmatize:",stemmed)
 
 print('This is a sentence.'.split())
 
+raw = """'When I'M a Duchess,' she said to herself, (not in a very hopeful tone
+though), 'I won't have any pepper in my kitchen AT ALL. Soup does very
+well without--Maybe it's ! 12$ 82% always pepper $10.2 U.S.A. that makes 
+people hot-tempered,'..."""
+
+import re
+
+print(re.split(r' ', raw))
+
+print(re.split(r'\W+', raw))
+
+print(re.findall(r"\b\w\w+\b",raw))
+
+print(re.findall(r"(?:[A-Z]\.)+|\w+(?:[']\w+)*|\$?\d+(?:\.\d+)?%?", raw))
+
+
 
 
 
