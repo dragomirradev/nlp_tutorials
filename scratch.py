@@ -75,7 +75,6 @@ wn.synset('car.n.01').examples()
 stopwords.words('english')
 
 
-
 token = word_tokenize(raw)
 text = nltk.Text(token)
 
@@ -256,3 +255,29 @@ from sklearn import preprocessing
 lb = preprocessing.LabelBinarizer()
 a = lb.fit_transform([0,1,2,1,2,2,3,0,1,0,0])
 a[:,:-1]
+
+zeros_mask = target == 0
+ones_mask = target == 1
+
+p_values = list()
+for j in range(train.shape[1]):
+    x = train[:,j].toarray()[np.ix_(zeros_mask)]
+    y = train[:,j].toarray()[np.ix_(ones_mask)]
+    p_value = ttest_ind(x,y)[1][0]
+    p_values.append(p_value)
+    sys.stdout.write('\r')
+    perc = round(j/train.shape[1]*100)
+    sys.stdout.write("[%-50s] %d%% complete" % ('='*(perc//2), perc))
+    sys.stdout.flush()
+    
+
+with open(join(root_dir,'p_values.pkl'),'wb') as f:
+    pickle.dump(p_values,f,-1)
+    
+with open(join(root_dir,'p_values.pkl'),'rb') as f:
+    p_values = pickle.load(f)
+
+
+high_quality_feat_mask =  (p_values < 0.001)
+
+feat_indx = np.arange(train.shape[1], dtype=int)[high_quality_feat_mask]
