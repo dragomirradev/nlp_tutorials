@@ -341,7 +341,7 @@ Apple Apple Banana Orange  (bigrams) ===>>> [Apple_Apple , Apple_Banana , Banana
                            (4 grams) ===> only one: the entire string!
 ```
 
-Here is an implementation from Chenglong Chen github [[+]](https://github.com/ChenglongChen/Kaggle_CrowdFlower/blob/master/Code/Feat/ngram.py)
+Here is an implementation from Chenglong Chen's github [[+]](https://github.com/ChenglongChen/Kaggle_CrowdFlower/blob/master/Code/Feat/ngram.py):
 ```python
 """
 __file__
@@ -453,6 +453,8 @@ def getTriterm(words, join_string):
         lst = getBiterm(words, join_string)
     return lst
 ```
+
+## Let's Dig "Deep"er! aka. Google's word2vec 
 
 
 ## Links
