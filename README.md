@@ -513,6 +513,8 @@ model.most_similar(positive=['men','car'],negative=['man']);
 ```
 
 
+### All of the python codes in this section are in the [intro.py](intro.py) script.
+
 
 
 
