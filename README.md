@@ -54,6 +54,19 @@ corpus_vec = vectorizer.transform(corpus).toarray()
 print(corpus_vec)
 ```
 
+And we get:
+
+```
+[[2 0 2]
+ [2 2 0]
+ [2 4 0]
+ [0 4 2]
+ [1 4 1]]
+```
+
+
+
+
 ## Links
 
 <http://www.nltk.org/book/>
