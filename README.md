@@ -515,7 +515,7 @@ model.most_similar(positive=['men','car'],negative=['man']);
 
 ### All of the python codes in this section are in the [intro.py](intro.py) script.
 
-## Example: Kaggle competition.
+## Example: Sentiment Analysis (Kaggle competition).
 
 Now we use the Kaggle competition: <https://www.kaggle.com/c/word2vec-nlp-tutorial/> as an example to demonstrate what we've learned so far.
 
