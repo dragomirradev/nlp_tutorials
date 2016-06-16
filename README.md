@@ -521,7 +521,13 @@ Now we use the Kaggle competition: <https://www.kaggle.com/c/word2vec-nlp-tutori
 
 See the notebook [popcorn.ipynb](popcorn.ipynb)
 
+## Credit
 
+Pretty much everything (diagrams particularly) was stolen from some awesome 
+blog posts, open source repositories etc. So I do not take any credit for
+anything here! I will hopefully update this repository with proper 
+citations. Meanwhile, please see the following links for the references 
+and other resources to learn from.
 
 
 ## Links
