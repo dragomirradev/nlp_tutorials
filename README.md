@@ -1,2 +1,2 @@
-See the post: <http://www.akbarian.org/notes/text-mining-nlp-python/> for
+See the post: <http://rmanak.github.io/notes/text-mining-nlp-python/> for
 description of this repo
