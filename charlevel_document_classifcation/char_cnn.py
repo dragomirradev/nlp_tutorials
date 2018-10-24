@@ -68,6 +68,28 @@ def get_data(num_classes=NUM_CLASSES, text_col_name='DOC',
 
     return np.asarray(X, dtype='int64'), np.asarray(y)
 
+
+# Fixed embedding, from https://github.com/BrambleXu/nlp-beginner-guide-keras/blob/master/char-level-cnn/char_cnn.py
+
+# Embedding weights
+embedding_weights = []  # (70, 69)
+embedding_weights.append(np.zeros(vocab_size))  # (0, 69)
+
+for char, i in tk.word_index.items():  # from index 1 to 69
+    onehot = np.zeros(vocab_size)
+    onehot[i - 1] = 1
+    embedding_weights.append(onehot)
+
+embedding_weights = np.array(embedding_weights)
+print('Load')
+
+# Embedding layer Initialization
+embedding_layer = Embedding(vocab_size + 1,
+                            embedding_size,
+                            input_length=input_size,
+                            weights=[embedding_weights])
+
+
 def define_model_1(conv_layers,
                   fully_connected_layers,
                   input_size=MAX_INPUT_LEN,
@@ -154,6 +176,7 @@ TRAIN_LEN = int(X.shape[0] * 0.8)
 #          batch_size=128,
 #          callbacks=[metrics])
 
+# https://www.kaggle.com/kmader/character-level-cnn-classification-with-dilations
 
 
 file_path="best_weights.h5"
@@ -167,3 +190,5 @@ model.fit(X_t_train, y_train,
           epochs=epochs,
           shuffle = True,
           callbacks=callbacks_list)
+
+
