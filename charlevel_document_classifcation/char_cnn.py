@@ -155,3 +155,15 @@ TRAIN_LEN = int(X.shape[0] * 0.8)
 #          callbacks=[metrics])
 
 
+
+file_path="best_weights.h5"
+checkpoint = ModelCheckpoint(file_path, monitor='val_loss', verbose=1, save_best_only=True, mode='min')
+early = EarlyStopping(monitor="val_loss", mode="min", patience=20)
+
+callbacks_list = [checkpoint, early] #early
+model.fit(X_t_train, y_train,
+          validation_data=(X_t_test, y_test),
+          batch_size=batch_size,
+          epochs=epochs,
+          shuffle = True,
+          callbacks=callbacks_list)
