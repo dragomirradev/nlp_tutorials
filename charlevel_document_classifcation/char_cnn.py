@@ -146,9 +146,12 @@ print(X.shape)
 
 TRAIN_LEN = int(X.shape[0] * 0.8)
 
-model.fit(X[:TRAIN_LEN], y[:TRAIN_LEN],
-          validation_data=(X[TRAIN_LEN:], y[TRAIN_LEN:]),
-          epochs=300,
-          batch_size=128,
-          callbacks=[metrics])
+# Define model then train
+# model = ...
+# model.fit(X[:TRAIN_LEN], y[:TRAIN_LEN],
+#         validation_data=(X[TRAIN_LEN:], y[TRAIN_LEN:]),
+#          epochs=300,
+#          batch_size=128,
+#          callbacks=[metrics])
+
 
