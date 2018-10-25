@@ -7,8 +7,9 @@ from keras.layers import Input, Dense, Concatenate, Flatten
 from keras.layers import Convolution1D
 from keras.layers import GlobalMaxPooling1D, MaxPooling1D
 from keras.layers import Embedding
-from keras.layers import AlphaDropout, Dropout
+from keras.layers import AlphaDropout, Dropout, SpatialDropout1D, BatchNormalization
 from keras.layers import ThresholdedReLU
+from keras.layers.merge import Add
 from keras.callbacks import Callback
 
 
@@ -57,7 +58,7 @@ def str_to_array(s, input_size=MAX_INPUT_LEN):
 
 def get_data(num_classes=NUM_CLASSES, text_col_name='DOC',
              class_col_name='LABEL',
-             input_fname='../data/data.csv')
+             input_fname='../data/data.csv'):
     df = pd.read_csv(input_fname)
     one_hot = np.eye(num_classes, dtype='int64')
     X = list()
@@ -159,6 +160,43 @@ def define_model_2(conv_layers,
     predictions = Dense(num_classes, activation='softmax')(x)
     model = Model(inputs=inputs, outputs=predictions)
     model.compile(optimizer=optimizer, loss=loss, metrics=['accuracy'])
+    return model
+
+def define_model_3(conv_layers, fully_connected_layers,
+                   dropout_proba=0.5,
+                   embedding_size=32,
+                   alphabet_size=ALPHABET_SIZE,
+                   num_classes=2, optimizer='adam',
+                   loss='categorical_crossentropy'):
+    """
+    Based on: https://arxiv.org/abs/1803.01271
+    """
+    inputs = Input(shape=(input_size,), name='input', dtype='int64')
+    x = Embedding(alphabet_size + 1, embedding_size, input_length=input_size)(inputs)
+
+    def _residual_block(num_filters, filter_width, dilation, dropout_proba, x):
+        x = Convolution1D(num_filters, filter_width, padding='same', dilation_rate=dilation, activation='linear')(x)
+        x = BatchNormalization()(x)
+        x = Activation('relu')(x)
+        x = SpatialDropout1D(dropout_proba)(x)
+        return x
+
+    for num_filters, filter_width in conv_layers:
+        res_block_in = Convolution1D(num_filters, filter_width, padding='same', activation='linear')(x)
+        x = _residual_block(num_filters, filter_width, 1, dropout_proba, x)
+        x = _residual_block(num_filters, filter_width, 2, dropout_proba, x)
+        x = Add()([res_block_in, x])
+
+    x = Flatten()(x)
+
+    for units in fully_connected_layers:
+        x = Dense(units)(x)
+        x = Activation('relu')(x)
+        x = Dropout(dropout_proba)(x)
+
+    predictions = Dense(num_classes, activation='softmax')(x)
+    model = Model(inputs=inputs, outputs=predictions)
+    model.compile(optimizer=optimizer, loss=loss)
     return model
 
 
