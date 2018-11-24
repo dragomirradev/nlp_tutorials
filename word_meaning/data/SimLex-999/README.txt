@@ -1,3 +1,5 @@
+The paper: https://arxiv.org/abs/1408.3456
+
 See: https://fh295.github.io/simlex.html
 
 SimLex-999 is a gold standard resource for the evaluation of models that learn the meaning of words and concepts.
