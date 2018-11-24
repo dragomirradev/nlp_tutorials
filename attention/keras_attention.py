@@ -1,6 +1,14 @@
 """
 From: https://www.kaggle.com/qqgeogor/keras-lstm-attention-glove840b-lb-0-043
 """
+
+from keras import backend as K
+from keras.engine.topology import Layer
+
+from keras import (initializers,
+                   regularizers,
+                   constrains)
+
 class Attention(Layer):
     def __init__(self, step_dim,
                  W_regularizer=None, b_regularizer=None,
